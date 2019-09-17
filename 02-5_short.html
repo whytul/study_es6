@@ -1,0 +1,20 @@
+<h2>화살표 함수(Arrow function) 콜백 한줄로 작성 가능</h2>
+
+<pre>
+<script>
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// 함수 표현식 사용
+// const numbersOverFive = numbers.filter(function(number) {
+//   return number > 5;
+// });
+
+// console.log(numbersOverFive); // [6, 7, 8, 9, 10] ;
+
+
+// 화살표 함수로 콜백함수 1줄 표현
+const numbersOverFive = numbers.filter(number => number > 5)
+
+console.log(numbersOverFive); // [6, 7, 8, 9, 10] ;
+</script>
+</pre>

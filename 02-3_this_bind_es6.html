@@ -1,0 +1,21 @@
+<h2>화살표 함수(Arrow function) this 바인드 ES6</h2>
+<button id="Buzzer1">버튼</button>
+<pre>
+<script>
+    //ES6
+const buzzer = {
+  name: 'Buzzer1',
+  addClickEvent() {
+    this.element = document.getElementById(this.name);
+
+    this.element.addEventListener('click', () => {  // buzzerElement에 다시 this 바인드를 하지 않아도 의도한 대로 실행된다.
+      console.log(this.name + ' buzzing!');
+      document.body.removeChild(this.element);
+    });
+  }
+};
+
+buzzer.addClickEvent();
+</script>
+화살표 함수는 해당 컨텍스트의 this 객체를 바인드 한 함수 표현식처럼 동작한다.
+</pre>

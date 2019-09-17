@@ -1,0 +1,26 @@
+<html>
+<body>
+<h2>호이스팅</h2>
+<pre>
+<script>
+    //var
+    here5 = '여기야~';    // 변수 초기화가 먼저 되있지만 에러가 발생하지 않는다.
+    document.writeln(here5); // '여기야~'
+    var here5;          // 변수 선언은 이부분에 있다.
+
+
+    //let
+    here6 = '여기야~'; // ReferenceError - 변수 here 가 선언되지 않았다.
+    document.writeln(here6);
+    let here6;
+
+    //자바스크립트는 코드를 실행하기 전에 가장 먼저 var, function을 찾아서 스코프의 최상단에 변수와 함수를 미리 등록하기 때문
+
+</script>
+
+<h3>ES5 변수 호이스팅(hoisting)의 문제점 개선</h3>
+var 키워드를 이용해서 변수를 선언하면 선언 이전에 변수를 사용할 수 있는 호이스팅 현상이 발생한다. 
+호이스팅이 없는 let, const를 사용해서 변수를 선언하면 에러가 발생해서 의도치 않은 실수를 줄일 수 있다.
+</pre>
+</body>
+</html>

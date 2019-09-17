@@ -1,0 +1,35 @@
+<h1>디스트럭처링(Destructuring)</h1>
+<h3>파라미터 내부 변수 선언</h3>
+<pre>
+파라미터로 받은 객체의 프로퍼티를 변수로 선언하여 사용할 수 있다.
+별도의 변수 선언문 없이 파라미터의 위치에 디스트럭처링 코드를 작성하면 된다.
+선언할 변수의 이름은 기존 객체에 선언된 이름 말고 다른 이름으로도 선언 가능하다.
+
+</pre>
+<script>
+    //ES5
+    function printError(error) {
+        var errorCode = error.errorCode;
+        var msg = error.errorMessage;
+
+        console.log('에러코드: ' + errorCode);
+        console.log('메시지:' + msg);
+    }
+
+
+    //ES6
+    // function printError({
+    //     errorCode,
+    //     errorMessage: msg  //변수명 변경가능
+    // }) {
+    //     console.log(`에러코드: ${errorCode}`);
+    //     console.log(`메시지: ${msg}`);
+    // }
+
+    let error = {};
+    error.errorCode = '00';
+    error.errorMessage = 'error message';
+
+    printError(error);
+
+</script>

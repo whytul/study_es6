@@ -1,0 +1,24 @@
+<h2>let과 const의 사용법과 차이점</h2>
+<pre>
+    <script>
+        // 값 수정
+        let foo = 'foo';
+        foo = 'foo2'; // OK - 값 수정이 가능하다.
+
+        const bar = 'bar';
+        bar = 'bar2'; // Type error - bar 변수는 상수이므로 값 수정이 불가능하다.
+
+        // 선언, 초기화
+        const baz2 = 'baz2';   // Type error - const로 선언한 변수는 선언과 동시에 초기화 해야한다.
+
+        let baz;      // OK - let으로 선언한 변수는 선언과 동시에 초기화할 필요 없다.
+        baz = 'baz';
+    </script>
+
+const변수의 값은 한 번 정의하면 변경할 수 없다.
+
+변수 선언 시에 변하지 않는 값은 const
+할 수 있는 값은 let을 사용
+
+</pre>
+

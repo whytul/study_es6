@@ -1,0 +1,56 @@
+정적 this
+<script>
+
+    //1
+    function Person() {
+        this.age = 0; // (1)person 객체의 this
+        setInterval(function growUp() {
+            this.age++; // (2)growUp의 this
+            console.log('person' + this.age);
+        }, 1000);
+    }
+
+    var p = new Person();
+    setInterval(function () {
+        console.log('p' + p.age);
+    }, 1001);
+
+    //2 위의 this 범위 문제로 아래와 같이 변수 하나 더 만들어서 사용.
+    // function Person() {
+    //     var that = this;
+    //     that.age = 0;
+    //     setInterval(function growUp() {
+    //         that.age++;
+    //         console.log('person' + that.age);
+    //     }, 1000);
+    // }
+
+    // var p = new Person();
+    // setInterval(function () {
+    //     console.log('p' + p.age);
+    // }, 1001);
+
+    //3
+    //하지만 이러한 특성과 달리 ES6의 화살표 함수로 정의된 함수는 호출시 this를 다시 바인딩하지 않는 특징이 있습니다.
+    //this를 다시 바인딩 하지 않기 때문에 화살표 함수 내부에서 사용하는 this는 보다 상위 함수쪽의 this가 그대로 사용되게 됩니다.
+
+    // function Person() {
+    //     this.age = 0;
+    //     setInterval(() => {
+    //         this.age++;
+    //         console.log('person' + this.age);
+    //     }, 1000);
+    // }
+
+    // var p = new Person();
+    // setInterval(function () {
+    //     console.log('p' + p.age);
+    // }, 1001);
+
+    /**
+    하지만 내부적으로 function으로 선언한 함수와 몇 가지 차이점이 있다. 
+    화살표 함수는 자신의 실행 컨텍스트에 this, arguments, super나 new.target을 가지고 있지 않은 함수 표현식이다. 
+    자신의 실행 컨텍스트에 별도의 this가 존재하지 않는 대신, 해당 화살표 함수가 정의된 실행 컨텍스트의 this를 그대로 따른다는 특징이 있다.
+    따라서 생성자 함수로는 사용할 수 없다. 메서드나 생성자로 사용되지 않는 간단한 함수를 표현하는 용도로 사용하면 된다
+    **/
+</script>

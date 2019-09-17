@@ -1,0 +1,29 @@
+<html>
+<body>
+<h2>블록스코프</h2>
+<pre>
+<script>
+    function print(text) {
+        document.writeln(text);
+    }
+
+    function sayHello(name) {
+        if (!name) {
+            var varErrorMessage = 'var error'; //한수 스코프
+            let letErrorMessage = 'let error';
+        }
+
+        print('Hello, ' + name + '!');
+        print(varErrorMessage);
+        print(letErrorMessage); // ReferenceError
+    }
+
+    sayHello();
+
+</script>
+<h3>블록 스코프 지원</h3>
+var로 선언한 변수는 함수 단위의 스코프
+let,const로 선언한 변수는 블록 스코프를 가진다
+</pre>
+</body>
+</html>

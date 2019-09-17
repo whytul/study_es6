@@ -1,0 +1,42 @@
+<h1>프로미스(Promise)</h1>
+
+<pre>
+기존 ES5에서는 비동기 처리를 하기 위해서 보통 콜백 지옥, 콜백 피라미드라고 하는 형태의 코드를 작성했다.
+어떤 비동기 처리의 결과를 전달받는 함수를 콜백 함수의 형태로 계속 생성하고 최종 결과를 가장 안쪽의 콜백 함수에서 전달받아 실행이 종료된다.
+<script>
+    //ES5
+    // doSomething(function(result) {
+        // doSomethingElse(result, function(newResult) {
+        //     doThirdThing(newResult, function(finalResult) {
+        //     console.log('Got the final result: ' + finalResult);
+        //     }, failureCallback);
+        // }, failureCallback);
+    // }, failureCallback);
+
+
+    //ES6
+    // doSomethingPromise
+    // .then((result) => doSomethingElse(result))
+    // .then((newResult) => doThirdThing(newResult))
+    // .then((finalResult) => console.log('Got the final result: ' + finalResult))
+    // .catch(failureCallback);
+
+//ES5
+    // setTimeout(function () {
+    //     console.log('Yay!')
+    //     setTimeout(function () {
+    //         console.log('Wheeyee!')
+    //     }, 1000)
+    // }, 1000);
+
+//ES6
+    var wait1000 = () => new Promise((resolve, reject) => { setTimeout(resolve, 1000) })
+    wait1000()
+        .then(function () {
+            console.log('Yay!')
+            return wait1000()
+        })
+        .then(function () {
+            console.log('Wheeyee!')
+        });
+</script>

@@ -1,0 +1,18 @@
+<h1>Rest 파라미터, Spread 표현식</h1>
+<h3>rest 파라미터</h3>
+<pre>
+여러개의 변수를 한번에 받는 문법 추가됨
+<script>
+    //ES5
+    function textToFriends() {
+        var message = arguments[0];
+        var friends = [].slice.call(arguments, 1); // argunemts 2번째 요소부터 친구들 배열로 만들기.
+
+        console.log(message, friends);
+    }
+
+    //ES6
+    function textToFriends(message, ...friends) {
+        console.log(message, friends);
+    }
+</script>

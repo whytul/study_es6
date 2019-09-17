@@ -1,0 +1,42 @@
+<h1>디스트럭처링(Destructuring)</h1>
+<pre>
+자바스크립트 개발을 하다 보면 객체를 함수끼리 주고받는 상황이 아주 많다.
+전달받은 객체의 프로퍼티를 변수로 선언하려면 각 프로퍼티를 별도의 변수로 할당하기 위해서 각 프로퍼티마다 독립된 할당문을 작성해야 했었다.
+하지만 디스트럭처링이라고 불리는 문법이 추가되어 변수 선언이 훨씬 더 편해졌고, 코드가 간결해졌다.
+
+변수 선언
+객체 디스트럭처링은 변수로 선언하고자 하는 객체의 프로퍼티명을 {, }안에 나열.
+배열 디스트럭처링도 비슷한데 [, ] 안에 나열.
+</pre>
+<script>
+  //ES5
+  function printUserInformation(data) {
+    var name = data.name;
+    var age = data.age;
+    var hobby = data.hobbies;
+    var firstHobby = data.hobbies[0];
+
+    console.log('이름: ' + name);
+    console.log('나이: ' + age);
+    console.log('가장 좋아하는 취미: ' + firstHobby);
+  }
+
+
+  //ES6
+  // function printUserInformation(data) {
+  //   const { name, age, gender, hobbies } = data;
+  //   const [firstHobby] = hobbies;
+
+  //   console.log(`이름: ${name}`);
+  //   console.log(`나이: ${age}`);
+  //   console.log(`가장 좋아하는 취미: ${firstHobby}`);
+  // }
+
+  let data = new Object();
+  data.name = "강희성";
+  data.age = "35";
+  data.hobbies = ['1', '2'];
+
+  printUserInformation(data);
+
+</script>

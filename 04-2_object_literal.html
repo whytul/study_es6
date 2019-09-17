@@ -1,0 +1,27 @@
+<h2>객체 리터럴 -축약형 메서드 이름</h2>
+<pre>
+<h3>축약형 메서드 이름</h3>
+function 키워드와 메서드 이름 뒤의 콜론은 생략할 수 있다.
+</pre>
+<script>
+    //ES5
+    var dog5 = {
+        name: 'Lycos',
+        bark: function () {
+            console.log('Woof! Woof!')
+        }
+    };
+
+    dog5.bark(); // 'Woof! Woof!';
+
+
+    //ES6
+    const dog6 = {
+        name: 'Lycos',
+        bark() {
+            console.log('Woof! Woof!')
+        }
+    };
+
+    dog6.bark(); // 'Woof! Woof!';
+</script>

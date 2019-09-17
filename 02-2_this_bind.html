@@ -1,0 +1,24 @@
+<h2>화살표 함수(Arrow function) this 바인드 ES5</h2>
+<button id="Buzzer1">버튼</button>
+<pre>
+<script>
+    //ES5
+    var buzzer = {
+        name: 'Buzzer1',
+        addClickEvent: function () {
+            this.element = document.getElementById(this.name);
+
+            var logNameAndRemoveButton = function () {
+                console.log(this.name + ' buzzing!');
+            }
+
+            this.element.addEventListener('click'
+                , logNameAndRemoveButton.bind(this)); 
+            // logNameAndRemoveButton 핸들러 함수 실행시 this 객체가 엘리먼트 객체 이므로 "bind(this)"를 이용해서 this객체를 지정해준다.
+        }
+    };
+
+    buzzer.addClickEvent();
+</script>
+ES5에서는 DOM의 이벤트 핸들러의 함수를 실행할 때 핸들러가 의도한 대로 동작하지 않는 문제가 있다
+</pre>

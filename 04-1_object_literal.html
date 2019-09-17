@@ -1,0 +1,28 @@
+<h2>객체 리터럴</h2>
+<pre>
+<h3>짧아진 객체 리터럴</h3>
+ES6에서는 객체 리터럴의 key 텍스트와 value에 올 변수 이름이 같은 경우 한 번만 입력해도 된다.
+</pre>
+<script>
+    //ES5
+    var iPhone = '아이폰';
+    var iPad = '아이패드';
+    var iMac = '아이맥';
+
+    var appleProducts5 = {
+        iPhone: iPhone,
+        iPad: iPad,
+        iMac: iMac
+    };
+
+    console.log(appleProducts5.iPhone);
+
+
+    //es6
+    const iPhone6 = '아이폰';
+    const iPad6 = '아이패드';
+    const iMac6 = '아이맥';
+
+    const appleProducts6 = { iPhone6, iPad6, iMac6 };
+    console.log(appleProducts6.iPad6);
+</script>

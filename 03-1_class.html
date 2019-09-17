@@ -1,0 +1,48 @@
+<h2> class </h2>
+<pre>
+class SomeClass {
+  static staticClassMethod() {
+    // 정적 메서드
+  }
+
+  constructor() {
+    // 생성자 함수
+  }
+  
+  someMethod() {
+    // 클래스 매서드
+  }
+}
+
+const instance = new SomeClass(); 
+instance.someMethod();
+
+SomeClass.staticClassMethod();
+</pre>
+<script>
+    //ES5
+    function Person5(name) {
+        this.name = name;
+    }
+
+    Person5.prototype.sayMyName = function () {
+        console.log('My name is "' + this.name + '"');
+    }
+
+    var es5 = new Person5('es5');
+    es5.sayMyName();
+
+    //ES6
+    class Person6 {
+        constructor(name) {
+            this.name = name
+        }
+
+        sayMyName() {
+            console.log(`My name is "${this.name}"`);
+        }
+    }
+
+    const es6 = new Person6('es6');
+    es6.sayMyName();
+</script>
