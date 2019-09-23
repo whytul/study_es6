@@ -36,10 +36,8 @@ then API는 첫번째 파라메터에 성공시 호출할 함수를,
                     // 해결됨 
                     resolve("해결 완료");
                 }
-
                 // 파라메터가 거짓이면, 
                 else {
-
                     // 실패 
                     reject(Error("실패!!"));
                 }
@@ -47,25 +45,14 @@ then API는 첫번째 파라메터에 성공시 호출할 함수를,
         });
     };
 
-    //Promise 실행부
+    //2. catch 테스트
     _promise(true)
+        .then(JSON.parse)
+        .catch(function() {
+            window.alert('체이닝 중간에 에러가!!');
+        })
         .then(function(text) {
-            // 성공시
             console.log(text);
-        }, function(error) {
-            // 실패시 
-            console.error(error);
+            console.log("끝~");
         });
-
-
-    //catch 테스트
-    // _promise(true)
-    //     .then(JSON.parse)
-    //     .catch(function() {
-    //         window.alert('체이닝 중간에 에러가!!');
-    //     })
-    //     .then(function(text) {
-    //         console.log(text);
-    //         console.log("끝~");
-    //     });
 </script>

@@ -4,15 +4,17 @@
 여러개의 변수를 한번에 받는 문법 추가됨
 <script>
     //ES5
-    function textToFriends() {
-        var message = arguments[0];
-        var friends = [].slice.call(arguments, 1); // argunemts 2번째 요소부터 친구들 배열로 만들기.
+    // function textToFriends() {
+    //     var message = arguments[0];
+    //     var friends = [].slice.call(arguments, 1); // argunemts 2번째 요소부터 친구들 배열로 만들기.
 
-        console.log(message, friends);
-    }
+    //     console.log(message, friends);
+    // }
 
     //ES6
     function textToFriends(message, ...friends) {
         console.log(message, friends);
     }
+
+    textToFriends('a','b', 'c', 1);
 </script>

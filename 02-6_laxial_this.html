@@ -1,19 +1,18 @@
 정적 this
 <script>
-
     //1
-    function Person() {
-        this.age = 0; // (1)person 객체의 this
-        setInterval(function growUp() {
-            this.age++; // (2)growUp의 this
-            console.log('person' + this.age);
-        }, 1000);
-    }
+    // function Person() {
+    //     var age = 0; // (1)person 객체의 this
+    //     setInterval(function growUp() {
+    //         age++; // (2)growUp의 this
+    //         console.log('person' + age);
+    //     }, 1000);
+    // }
 
-    var p = new Person();
-    setInterval(function () {
-        console.log('p' + p.age);
-    }, 1001);
+    // var p = new Person();
+    // setInterval(function() {
+    //     console.log('p' + p.age);
+    // }, 1001);
 
     //2 위의 this 범위 문제로 아래와 같이 변수 하나 더 만들어서 사용.
     // function Person() {
@@ -26,7 +25,7 @@
     // }
 
     // var p = new Person();
-    // setInterval(function () {
+    // setInterval(function() {
     //     console.log('p' + p.age);
     // }, 1001);
 
@@ -34,18 +33,18 @@
     //하지만 이러한 특성과 달리 ES6의 화살표 함수로 정의된 함수는 호출시 this를 다시 바인딩하지 않는 특징이 있습니다.
     //this를 다시 바인딩 하지 않기 때문에 화살표 함수 내부에서 사용하는 this는 보다 상위 함수쪽의 this가 그대로 사용되게 됩니다.
 
-    // function Person() {
-    //     this.age = 0;
-    //     setInterval(() => {
-    //         this.age++;
-    //         console.log('person' + this.age);
-    //     }, 1000);
-    // }
+    function Person() {
+        this.age = 0;
+        setInterval(() => {
+            this.age++;
+            console.log('person' + this.age);
+        }, 1000);
+    }
 
-    // var p = new Person();
-    // setInterval(function () {
-    //     console.log('p' + p.age);
-    // }, 1001);
+    var p = new Person();
+    setInterval(function() {
+        console.log('p' + p.age);
+    }, 1001);
 
     /**
     하지만 내부적으로 function으로 선언한 함수와 몇 가지 차이점이 있다. 

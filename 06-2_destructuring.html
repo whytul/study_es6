@@ -8,23 +8,20 @@
 </pre>
 <script>
     //ES5
-    function printError(error) {
-        var errorCode = error.errorCode;
-        var msg = error.errorMessage;
+    // function printError(error) {
+    //     var errorCode = error.errorCode;
+    //     var msg = error.errorMessage;
 
-        console.log('에러코드: ' + errorCode);
-        console.log('메시지:' + msg);
-    }
+    //     console.log('에러코드: ' + errorCode);
+    //     console.log('메시지:' + msg);
+    // }
 
 
     //ES6
-    // function printError({
-    //     errorCode,
-    //     errorMessage: msg  //변수명 변경가능
-    // }) {
-    //     console.log(`에러코드: ${errorCode}`);
-    //     console.log(`메시지: ${msg}`);
-    // }
+    function printError({errorCode, errorMessage: msg}) {
+        console.log(`에러코드: ${errorCode}`);
+        console.log(`메시지: ${msg}`);
+    }
 
     let error = {};
     error.errorCode = '00';

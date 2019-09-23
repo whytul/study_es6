@@ -25,7 +25,7 @@ SomeClass.staticClassMethod();
         this.name = name;
     }
 
-    Person5.prototype.sayMyName = function () {
+    Person5.prototype.sayMyName = function() {
         console.log('My name is "' + this.name + '"');
     }
 
@@ -34,12 +34,15 @@ SomeClass.staticClassMethod();
 
     //ES6
     class Person6 {
-        constructor(name) {
-            this.name = name
+        constructor(name2) {
+            console.log(`My name is "${name}"`);
+            this.name = name2
         }
 
         sayMyName() {
             console.log(`My name is "${this.name}"`);
+
+            console.log(`My name is "${name}"`);
         }
     }
 

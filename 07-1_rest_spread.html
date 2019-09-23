@@ -15,33 +15,33 @@ const friends = ['Jack', 'Jill', 'Tom'];
 textToFriends(...friends);
 **/
   //ES5
-  var friends = ['Jack', 'Jill', 'Tom'];
-  var anotherFriedns = [friends[0], friends[1], friends[2], 'Kim'];
+  // var friends = ['Jack', 'Jill', 'Tom'];
+  // var anotherFriedns = [friends[0], friends[1], friends[2], 'Kim'];
 
-  var drinks = {
-    coffee: 'coffee',
-    juice: 'orange juice'
-  };
-  var newDrinks = {
-    coffee: drinks.coffee,
-    juice: 'tomato juice',
-    water: 'water'
-  };
-
-
-  //ES6
-  // const friends = ['Jack', 'Jill', 'Tom'];
-  // const anotherFriedns = [...friends, 'Kim'];
-
-  // const drinks = {
+  // var drinks = {
   //   coffee: 'coffee',
   //   juice: 'orange juice'
   // };
-  // const newDrinks = {
-  //   ...drinks,
+  // var newDrinks = {
+  //   coffee: drinks.coffee,
   //   juice: 'tomato juice',
   //   water: 'water'
   // };
+
+
+  //ES6
+  const friends = ['Jack', 'Jill', 'Tom'];
+  const anotherFriedns = [...friends, 'Kim'];
+
+  const drinks = {
+    coffee: 'coffee',
+    juice: 'orange juice'
+  };
+  const newDrinks = {
+    ...drinks,
+    juice: 'tomato juice',
+    water: 'water'
+  };
 
   console.log(newDrinks);
 </script>

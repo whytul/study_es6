@@ -2,30 +2,30 @@
 <pre>
 템플릿 리터럴 문법은 백 틱(`)으로 감싸진 문자열로 이루어져 있다.
 기존의 문자열 조작 시에는 각기 분리된 문자열 리터럴을 + 연산자로 연결해주어야 했다.
-</pre>
+
 <script>
     //ES5
     var brandName = 'KTIS';
     var productName = 'ES5';
 
-    console.log('Hello ' + brandName + ' ' + productName + '!'); // 'Hello KTIS ES5!';
+    document.writeln('Hello ' + brandName + ' ' + productName + '!'); // 'Hello KTIS ES5!';
     
     var howToDripCoffee5 = '1. 물을 마신다.\n2. 커피 원두를 간다.\n3. 갈린 원두를 커피 필터 위에 두고, 필터를 컵에 올려놓는다.\n4. 끓인물을 천천히 필터 위로 흘려내린다.';
-    console.log(howToDripCoffee5);
-
+    document.writeln(howToDripCoffee5);
+    document.writeln();
     
     //ES6
     const brandName6 = 'KTIS';
     const productName6 = 'ES6';
-
-    console.log(`Hello ${brandName6} ${productName6}!`); // 'Hello KTIS ES6!';
+    document.writeln(`Hello ${brandName6} ${productName6}!`); // 'Hello KTIS ES6!';
 
     //개행도 가능하다
     const howToDripCoffee6 = `1. 물을 끓인다.
-        2. 커피 원두를 간다.
-        3. 갈린 원두를 커피 필터 위에 두고, 필터를 컵에 올려놓는다.
-        4. 끓인물을 천천히 필터 위로 흘려내린다.`;
+2. 커피 원두를 간다.
+3. 갈린 원두를 커피 필터 위에 두고, 필터를 컵에 올려놓는다.
+4. 끓인물을 천천히 필터 위로 흘려내린다.` `ssssss`;
 
-     console.log(howToDripCoffee6);
+     document.writeln(howToDripCoffee6);
 
 </script>
+</pre>

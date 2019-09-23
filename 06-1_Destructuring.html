@@ -10,27 +10,27 @@
 </pre>
 <script>
   //ES5
-  function printUserInformation(data) {
-    var name = data.name;
-    var age = data.age;
-    var hobby = data.hobbies;
-    var firstHobby = data.hobbies[0];
+  // function printUserInformation(data) {
+  //   var name = data.name;
+  //   var age = data.age;
+  //   var hobby = data.hobbies;
+  //   var firstHobby = data.hobbies[0];
 
-    console.log('이름: ' + name);
-    console.log('나이: ' + age);
-    console.log('가장 좋아하는 취미: ' + firstHobby);
-  }
+  //   console.log('이름: ' + name);
+  //   console.log('나이: ' + age);
+  //   console.log('가장 좋아하는 취미: ' + firstHobby);
+  // }
 
 
   //ES6
-  // function printUserInformation(data) {
-  //   const { name, age, gender, hobbies } = data;
-  //   const [firstHobby] = hobbies;
-
-  //   console.log(`이름: ${name}`);
-  //   console.log(`나이: ${age}`);
-  //   console.log(`가장 좋아하는 취미: ${firstHobby}`);
-  // }
+  function printUserInformation(data) {
+    const { name, age, gender, hobbies } = data;
+    const [firstHobby, two] = hobbies;
+    name = 'ee';
+    console.log(`이름: ${name}`);
+    console.log(`나이: ${age}`);
+    console.log(`가장 좋아하는 취미: ${hobbies}`);
+  }
 
   let data = new Object();
   data.name = "강희성";
